@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1>Hey there! 👋</h1>
+
+    <p>This is the HTML connector for the Power-Up. It will be loaded into a hidden iframe when your Power-Up is enabled.</p>
+   
+    <p>Not sure what is going on? Head on over to the <a id="readme" href="https://glitch.com/edit/#!/trello-power-up-skeleton?path=README.md">README</a>.</p>
+  
+    <script src="https://p.trellocdn.com/power-up.min.js"></script>
+    <script>
+      /* global TrelloPowerUp */
+      
+      var Promise = TrelloPowerUp.Promise;
+      
+      var BLACK_ROCKET_ICON = 'https://cdn.glitch.com/1b42d7fe-bda8-4af8-a6c8-eff0cea9e08a%2Frocket-ship.png?1494946700421';
+      
+      TrelloPowerUp.initialize({
+        // Start adding handlers for your capabilities here!
+        'card-buttons': function(t, options) {
+        return t.set("member", "shared", "hello", "world")
+        .then(function(){
+         return [{
+        icon: BLACK_ROCKET_ICON,
+          text: 'Estimate Size',
+              callback: function(t) {
+                return t.popup({
+                  title: "Estimation",
+                  url: 'estimate.html',
+                });
+              }
+          }];
+        })
+        },
+      });
+
+    </script>
+  </body>
+</html>
