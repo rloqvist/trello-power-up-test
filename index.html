@@ -22,7 +22,10 @@
       
       TrelloPowerUp.initialize({
         // Start adding handlers for your capabilities here!
-        'card-buttons': function(t, options) {
+        'board-buttons': function(t, options) {
+          console.log("here");
+          console.log(t);
+          console.dir(t);
         return t.set("member", "shared", "hello", "world")
         .then(function(){
          return [{
