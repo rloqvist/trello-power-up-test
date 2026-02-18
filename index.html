@@ -30,12 +30,13 @@
             .then(function(){
               return [{
                 text: 'Sprint',
+                icon: 'Icon',
                 callback: function(t) {
                   window.location.href = "https://trello.com/b/mYxo7eXg/product-board?filter=dueComplete:false"
-                  // return t.popup({
-                  //   title: "Estimation",
-                  //   url: 'estimate.html',
-                  // });
+                  return t.popup({
+                    title: "Estimation",
+                    url: 'estimate.html',
+                  });
                 }
               }];
             })
